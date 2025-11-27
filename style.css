@@ -1,0 +1,84 @@
+/* ----- MAIN LAYOUT ----- */
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f2f4f8;
+    color: #333;
+}
+
+header {
+    background: #4a67d6;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin: 0;
+}
+
+/* ----- SIDEBAR ----- */
+
+.sidebar {
+    width: 220px;
+    background: #ffffff;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+    min-height: 100vh;
+}
+
+.sidebar a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background: #e8eaff;
+    color: #4a67d6;
+}
+
+.sidebar .active {
+    background: #4a67d6;
+    color: white;
+}
+
+/* ----- MAIN CONTENT ----- */
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+h2 {
+    color: #4a67d6;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+a.btn {
+    background: #4a67d6;
+    padding: 10px 14px;
+    color: white;
+    border-radius: 6px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.btn:hover {
+    background: #3a52b2;
+}

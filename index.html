@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Study Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -15,6 +16,7 @@
 
 <div class="container">
 
+    <!-- SIDEBAR -->
     <div class="sidebar">
         <a href="index.html" class="active">🏠 Home</a>
         <a href="maths.html">➗ Maths</a>
@@ -27,16 +29,31 @@
         <a href="modernstudies.html">🏛️ Modern Studies</a>
     </div>
 
+    <!-- MAIN CONTENT -->
     <div class="content">
+
         <div class="box">
             <h2>Welcome!</h2>
-            <p>Use the sidebar to navigate through your subjects. Each page includes:</p>
+            <p>This is your personal study dashboard. Each subject page includes:</p>
             <ul>
+                <li>📄 Direct SQA past papers</li>
                 <li>📌 Study tips</li>
-                <li>📄 Direct links to SQA past papers</li>
-                <li>🧠 Revision tools</li>
+                <li>📝 Notes sections (auto-saved)</li>
+                <li>✔ Checklists for tasks</li>
+                <li>🧠 Flashcards</li>
+                <li>📅 Planner</li>
+                <li>✍️ Essay checker (English only)</li>
             </ul>
+            <p>Use the sidebar to get started.</p>
         </div>
+
+        <div class="box">
+            <h2>📅 Weekly Planner</h2>
+            <p>Write anything here — it saves automatically.</p>
+            <textarea id="home-planner" oninput="save('home-planner')" placeholder="Plan your study schedule here..."></textarea>
+            <script>load('home-planner');</script>
+        </div>
+
     </div>
 
 </div>

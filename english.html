@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>English Revision</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>📝 English</h1>
+    <p>Study tips • Notes • Flashcards • Past Papers • Essay Checker</p>
+</header>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="index.html">🏠 Home</a>
+        <a href="maths.html">➗ Maths</a>
+        <a href="english.html" class="active">📝 English</a>
+        <a href="science.html">🔬 Science</a>
+        <a href="history.html">📜 History</a>
+        <a href="geography.html">🌍 Geography</a>
+        <a href="business.html">💼 Business</a>
+        <a href="computing.html">💻 Computing</a>
+        <a href="modernstudies.html">🏛️ Modern Studies</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <!-- STUDY TIPS -->
+        <div class="box">
+            <h2>📌 Study Tips</h2>
+            <ul>
+                <li>Practise close reading regularly using past papers.</li>
+                <li>Use PEEL/PEAR structure for critical essays.</li>
+                <li>Revise linking words (Furthermore, This suggests, Therefore...).</li>
+                <li>Read sample essays to improve structure + flow.</li>
+            </ul>
+        </div>
+
+        <!-- PAST PAPERS -->
+        <div class="box">
+            <h2>📄 Past Papers</h2>
+            <ul>
+                <li><a href="https://www.sqa.org.uk/pastpapers/papers/papers/2023/N5_English_Critical-Reading_2023.pdf" target="_blank">2023 Critical Reading</a></li>
+                <li><a href="https://www.sqa.org.uk/pastpapers/papers/papers/2023/N5_English_Reading-Analysis-UE_2023.pdf" target="_blank">2023 RUAE</a></li>
+                <li><a href="https://www.sqa.org.uk/pastpapers/findpastpaper.htm?subject=English&level=National5" target="_blank">All SQA English Papers</a></li>
+            </ul>
+        </div>
+
+        <!-- ESSAY CHECKER -->
+        <div class="box">
+            <h2>✍️ Essay Checker (Nat 5)</h2>
+            <p>Paste your essay below. It auto-saves.</p>
+
+            <textarea id="english-essay" placeholder="Paste your essay here..." oninput="save('english-essay')"></textarea>
+            <script>load('english-essay');</script>
+
+            <a class="btn" onclick="sendEssay()">Check with ChatGPT</a>
+        </div>
+
+        <!-- NOTES -->
+        <div class="box">
+            <h2>📝 Notes</h2>
+            <textarea id="english-notes" placeholder="Write your notes..." oninput="save('english-notes')"></textarea>
+            <script>load('english-notes');</script>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div class="box">
+            <h2>✔ Checklist</h2>
+
+            <label><input type="checkbox" id="eng-check-1" onclick="toggleCheck('eng-check-1')"> Revise RUAE techniques</label><br>
+            <label><input type="checkbox" id="eng-check-2" onclick="toggleCheck('eng-check-2')"> Practise 1 critical essay</label><br>
+            <label><input type="checkbox" id="eng-check-3" onclick="toggleCheck('eng-check-3')"> Memorise linking words</label><br>
+
+            <script>
+                loadCheck('eng-check-1');
+                loadCheck('eng-check-2');
+                loadCheck('eng-check-3');
+            </script>
+        </div>
+
+        <!-- FLASHCARDS -->
+        <div class="box">
+            <h2>🧠 Flashcards</h2>
+
+            <input id="english-q" type="text" placeholder="Question…">
+            <input id="english-a" type="text" placeholder="Answer…">
+            <button class="btn" onclick="addFlashcard('english')">Add Flashcard</button>
+
+            <ul id="english-flashcards"></ul>
+
+            <script>loadFlashcards('english');</script>
+        </div>
+
+        <!-- PLANNER -->
+        <div class="box">
+            <h2>📅 Planner</h2>
+
+            <textarea id="english-planner" placeholder="Plan your English revision here..." oninput="save('english-planner')"></textarea>
+            <script>load('english-planner');</script>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

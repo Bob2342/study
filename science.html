@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Science Revision</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>🔬 Science</h1>
+    <p>Study tips • Notes • Flashcards • Past Papers</p>
+</header>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="index.html">🏠 Home</a>
+        <a href="maths.html">➗ Maths</a>
+        <a href="english.html">📝 English</a>
+        <a href="science.html" class="active">🔬 Science</a>
+        <a href="history.html">📜 History</a>
+        <a href="geography.html">🌍 Geography</a>
+        <a href="business.html">💼 Business</a>
+        <a href="computing.html">💻 Computing</a>
+        <a href="modernstudies.html">🏛️ Modern Studies</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <!-- STUDY TIPS -->
+        <div class="box">
+            <h2>📌 Study Tips</h2>
+            <ul>
+                <li>Focus on key concepts and terminology.</li>
+                <li>Create mind maps for processes and cycles (e.g., photosynthesis, respiration).</li>
+                <li>Practise past paper questions for each topic.</li>
+                <li>Use flashcards for definitions, formulas, and units.</li>
+            </ul>
+        </div>
+
+        <!-- PAST PAPERS -->
+        <div class="box">
+            <h2>📄 Past Papers</h2>
+            <ul>
+                <li><a href="https://www.sqa.org.uk/pastpapers/findpastpaper.htm?subject=Biology&level=National5" target="_blank">Biology Past Papers</a></li>
+                <li><a href="https://www.sqa.org.uk/pastpapers/findpastpaper.htm?subject=Chemistry&level=National5" target="_blank">Chemistry Past Papers</a></li>
+                <li><a href="https://www.sqa.org.uk/pastpapers/findpastpaper.htm?subject=Physics&level=National5" target="_blank">Physics Past Papers</a></li>
+            </ul>
+        </div>
+
+        <!-- NOTES -->
+        <div class="box">
+            <h2>📝 Notes</h2>
+            <textarea id="science-notes" placeholder="Write your science notes..." oninput="save('science-notes')"></textarea>
+            <script>load('science-notes');</script>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div class="box">
+            <h2>✔ Checklist</h2>
+
+            <label><input type="checkbox" id="science-check-1" onclick="toggleCheck('science-check-1')"> Revise Biology topics</label><br>
+            <label><input type="checkbox" id="science-check-2" onclick="toggleCheck('science-check-2')"> Complete Chemistry questions</label><br>
+            <label><input type="checkbox" id="science-check-3" onclick="toggleCheck('science-check-3')"> Practice Physics problems</label><br>
+
+            <script>
+                loadCheck('science-check-1');
+                loadCheck('science-check-2');
+                loadCheck('science-check-3');
+            </script>
+        </div>
+
+        <!-- FLASHCARDS -->
+        <div class="box">
+            <h2>🧠 Flashcards</h2>
+
+            <input id="science-q" type="text" placeholder="Question…">
+            <input id="science-a" type="text" placeholder="Answer…">
+            <button class="btn" onclick="addFlashcard('science')">Add Flashcard</button>
+
+            <ul id="science-flashcards"></ul>
+
+            <script>loadFlashcards('science');</script>
+        </div>
+
+        <!-- PLANNER -->
+        <div class="box">
+            <h2>📅 Planner</h2>
+
+            <textarea id="science-planner" placeholder="Plan your science study here..." oninput="save('science-planner')"></textarea>
+            <script>load('science-planner');</script>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

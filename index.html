@@ -39,39 +39,99 @@
             color: #4a67d6;
         }
 
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
+        ul { padding-left: 20px; }
 
         a {
             color: #4a67d6;
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        a:hover { text-decoration: underline; }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: vertical;
+        }
+
+        button {
+            background: #4a67d6;
+            border: none;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #3d55b3;
         }
     </style>
+
+    <script>
+        function sendEssayToChatGPT() {
+            const essay = document.getElementById("englishEssay").value;
+            if (!essay.trim()) {
+                alert("Please enter your essay first.");
+                return;
+            }
+
+            const prompt = encodeURIComponent(
+                "Is this any good for Nat 5 English?\n\nHere is my essay:\n" + essay
+            );
+
+            // Opens ChatGPT with the prompt already inserted
+            window.open("https://chat.openai.com/?q=" + prompt, "_blank");
+        }
+    </script>
+
 </head>
 
 <body>
 
 <header>
     <h1>📚 Study Dashboard</h1>
-    <p>Your subjects • Tips • Past papers</p>
+    <p>Your subjects • Tips • Past papers • Tools</p>
 </header>
 
 <div class="container">
 
-    <!-- Example Subject -->
+    <!-- ENGLISH -->
+    <div class="subject">
+        <h2>English</h2>
+
+        <h3>Study Tips</h3>
+        <ul>
+            <li>Practice close reading using past papers.</li>
+            <li>Plan essays with clear structure (intro → points → evidence → conclusion).</li>
+            <li>Use linking phrases like “This shows…”, “This suggests…”, “Furthermore…”.</li>
+        </ul>
+
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers (English)</a></li>
+            <li><a href="https://www.bbc.co.uk/bitesize" target="_blank">BBC Bitesize English</a></li>
+        </ul>
+
+        <h3>Check Your Essay with ChatGPT</h3>
+        <p>Paste your mini essay here:</p>
+        <textarea id="englishEssay" placeholder="Type or paste your essay here..."></textarea>
+        <button onclick="sendEssayToChatGPT()">Check Essay</button>
+    </div>
+
+    <!-- MATHS -->
     <div class="subject">
         <h2>Maths</h2>
         <h3>Study Tips</h3>
         <ul>
-            <li>Practice questions daily, even small sets.</li>
-            <li>Make a formula sheet and revise it often.</li>
-            <li>Work through problems you got wrong.</li>
+            <li>Practice small sets of questions every day.</li>
+            <li>Make a formula sheet for quick revision.</li>
+            <li>Track topics you get wrong and redo them.</li>
         </ul>
 
         <h3>Useful Links</h3>
@@ -81,37 +141,103 @@
         </ul>
     </div>
 
-    <!-- Add more subjects below -->
-
-    <div class="subject">
-        <h2>English</h2>
-        <h3>Study Tips</h3>
-        <ul>
-            <li>Practice close reading using past papers.</li>
-            <li>Plan essays with clear structure (intro • points • evidence).</li>
-            <li>Read sample essays and improve vocabulary.</li>
-        </ul>
-
-        <h3>Useful Links</h3>
-        <ul>
-            <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers</a></li>
-            <li><a href="https://www.bbc.co.uk/bitesize" target="_blank">BBC Bitesize</a></li>
-        </ul>
-    </div>
-
+    <!-- SCIENCE -->
     <div class="subject">
         <h2>Science</h2>
         <h3>Study Tips</h3>
         <ul>
-            <li>Create mind maps for each topic.</li>
-            <li>Use diagrams to understand processes.</li>
-            <li>Review definitions regularly.</li>
+            <li>Create mind maps of each topic.</li>
+            <li>Use diagrams to understand processes clearly.</li>
+            <li>Practice using past-paper-style questions.</li>
         </ul>
 
         <h3>Useful Links</h3>
         <ul>
             <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers</a></li>
             <li><a href="https://www.bbc.co.uk/bitesize/levels" target="_blank">BBC Bitesize Science</a></li>
+        </ul>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="subject">
+        <h2>History</h2>
+        <h3>Study Tips</h3>
+        <ul>
+            <li>Use timelines to track events in order.</li>
+            <li>Memorise key dates + causes + consequences.</li>
+            <li>Practice source questions with PEEL structure.</li>
+        </ul>
+
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers (History)</a></li>
+            <li><a href="https://www.bbc.co.uk/bitesize" target="_blank">BBC Bitesize History</a></li>
+        </ul>
+    </div>
+
+    <!-- GEOGRAPHY -->
+    <div class="subject">
+        <h2>Geography</h2>
+        <h3>Study Tips</h3>
+        <ul>
+            <li>Use diagrams for rivers, coasts, and glaciation.</li>
+            <li>Practice case studies using bullet points.</li>
+            <li>Learn map skills (scale, grid refs, symbols).</li>
+        </ul>
+
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers (Geography)</a></li>
+            <li><a href="https://www.bbc.co.uk/bitesize" target="_blank">BBC Bitesize Geography</a></li>
+        </ul>
+    </div>
+
+    <!-- BUSINESS -->
+    <div class="subject">
+        <h2>Business Management</h2>
+        <h3>Study Tips</h3>
+        <ul>
+            <li>Learn definitions for marketing, finance and operations.</li>
+            <li>Use real businesses as examples.</li>
+            <li>Practice exam-style short response questions.</li>
+        </ul>
+
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers</a></li>
+        </ul>
+    </div>
+
+    <!-- COMPUTING -->
+    <div class="subject">
+        <h2>Computing Science</h2>
+        <h3>Study Tips</h3>
+        <ul>
+            <li>Revise key coding concepts (loops, arrays, conditions).</li>
+            <li>Memorise computer architecture components.</li>
+            <li>Practice writing pseudocode.</li>
+        </ul>
+
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers</a></li>
+        </ul>
+    </div>
+
+    <!-- MODERN STUDIES -->
+    <div class="subject">
+        <h2>Modern Studies</h2>
+        <h3>Study Tips</h3>
+        <ul>
+            <li>Use up-to-date examples for essays.</li>
+            <li>Memorise statistics for democracy, crime, inequalities.</li>
+            <li>Practice source questions regularly.</li>
+        </ul>
+
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="https://www.sqa.org.uk/pastpapers" target="_blank">SQA Past Papers</a></li>
+            <li><a href="https://www.bbc.co.uk/bitesize" target="_blank">BBC Bitesize Modern Studies</a></li>
         </ul>
     </div>
 
